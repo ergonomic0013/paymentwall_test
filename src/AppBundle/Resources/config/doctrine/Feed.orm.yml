@@ -1,0 +1,26 @@
+AppBundle\Entity\Feed:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\FeedRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        tittle:
+            type: string
+            length: 255
+        createdTime:
+            type: string
+            column: created_time
+        text:
+            type: text
+        author:
+            type: string
+            length: 255
+        category:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }
