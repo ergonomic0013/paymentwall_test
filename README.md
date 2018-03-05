@@ -1,77 +1,60 @@
-Symfony Standard Edition
+Paymentwall test 
 ========================
 
-**WARNING**: This distribution does not support Symfony 4. See the
-[Installing & Setting up the Symfony Framework][15] page to find a replacement
-that fits you best.
-
-Welcome to the Symfony Standard Edition - a fully-functional Symfony
-application that you can use as the skeleton for your new applications.
 
 For details on how to download and get started with Symfony, see the
 [Installation][1] chapter of the Symfony Documentation.
 
-What's inside?
+##CLI mode:
 --------------
 
-The Symfony Standard Edition is configured with the following defaults:
+First you need to clone project. For this enter the command in console:
 
-  * An AppBundle you can use to start coding;
+```sh
+git clone https://github.com/ergonomic0013/paymentwall_test.git
+```
 
-  * Twig as the only configured template engine;
+After setup DB and create table (enter command in project directory):
+```sh
+php bin/console db:setup
+```
+Default parameters:
+```yaml
+parameters:
+database_host: 127.0.0.1
+database_port: null
+database_name: paymentwall
+database_user: root
+database_password: start
+mailer_transport: smtp
+mailer_host: 127.0.0.1
+mailer_user: null
+mailer_password: null
+secret: ThisTokenIsNotSoSecretChangeIt
+```
+#### Commands:
+Add new item:
+```
+php bin/console feed:add --tittle="any value" --text="any value" --author="any value" --category=[comedy || dramma || fantasy]
+```
+*all value are required
+** --category must one of the following
 
-  * Doctrine ORM/DBAL;
 
-  * Swiftmailer;
+List all:
+```
+php bin/console feed:list
+```
 
-  * Annotations enabled for everything.
+Remove item by `id`:
+```
+php bin/console feed:remove N
+```
+*N = [1, 2, 3 ...... N];
 
-It comes pre-configured with the following bundles:
 
-  * **FrameworkBundle** - The core Symfony framework bundle
 
-  * [**SensioFrameworkExtraBundle**][6] - Adds several enhancements, including
-    template and routing annotation capability
 
-  * [**DoctrineBundle**][7] - Adds support for the Doctrine ORM
 
-  * [**TwigBundle**][8] - Adds support for the Twig templating engine
 
-  * [**SecurityBundle**][9] - Adds security by integrating Symfony's security
-    component
 
-  * [**SwiftmailerBundle**][10] - Adds support for Swiftmailer, a library for
-    sending emails
-
-  * [**MonologBundle**][11] - Adds support for Monolog, a logging library
-
-  * **WebProfilerBundle** (in dev/test env) - Adds profiling functionality and
-    the web debug toolbar
-
-  * **SensioDistributionBundle** (in dev/test env) - Adds functionality for
-    configuring and working with Symfony distributions
-
-  * [**SensioGeneratorBundle**][13] (in dev env) - Adds code generation
-    capabilities
-
-  * [**WebServerBundle**][14] (in dev env) - Adds commands for running applications
-    using the PHP built-in web server
-
-  * **DebugBundle** (in dev/test env) - Adds Debug and VarDumper component
-    integration
-
-All libraries and bundles included in the Symfony Standard Edition are
-released under the MIT or BSD license.
-
-Enjoy!
-
-[1]:  https://symfony.com/doc/3.4/setup.html
-[6]:  https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/index.html
-[7]:  https://symfony.com/doc/3.4/doctrine.html
-[8]:  https://symfony.com/doc/3.4/templating.html
-[9]:  https://symfony.com/doc/3.4/security.html
-[10]: https://symfony.com/doc/3.4/email.html
-[11]: https://symfony.com/doc/3.4/logging.html
-[13]: https://symfony.com/doc/current/bundles/SensioGeneratorBundle/index.html
-[14]: https://symfony.com/doc/current/setup/built_in_web_server.html
-[15]: https://symfony.com/doc/current/setup.html
