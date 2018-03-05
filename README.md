@@ -37,8 +37,9 @@ Add new item:
 ```
 php bin/console feed:add --tittle="any value" --text="any value" --author="any value" --category=[comedy || dramma || fantasy]
 ```
-*all value are required
-** --category must one of the following
+`*all value are required`
+
+`** --category must one of the following`
 
 
 List all:
@@ -50,7 +51,7 @@ Remove item by `id`:
 ```
 php bin/console feed:remove N
 ```
-*N = [1, 2, 3 ...... N];
+`*N = [1, 2, 3 ...... N];`
 
 
 
