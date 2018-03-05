@@ -53,9 +53,10 @@ php bin/console feed:remove N
 ```
 `*N = [1, 2, 3 ...... N];`
 
+## GUI mode:
+--------------
 
-
-
+comming soon...
 
 
 
