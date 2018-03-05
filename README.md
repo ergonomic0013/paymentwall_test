@@ -5,7 +5,7 @@ Paymentwall test
 For details on how to download and get started with Symfony, see the
 [Installation][1] chapter of the Symfony Documentation.
 
-##CLI mode:
+## CLI mode:
 --------------
 
 First you need to clone project. For this enter the command in console:
