@@ -24,7 +24,7 @@ class ListFeedCommand extends Command
 	protected function configure()
     {
         $this->setName('feed:list')
-            ->setDescription('Show all items');
+            ->setDescription('Show all feeds');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
@@ -32,17 +32,17 @@ class ListFeedCommand extends Command
         $propertyAccessor = PropertyAccess::createPropertyAccessor();
         $item = $this->em->getRepository(Feed::class)->findAll();
         $table = new Table($output);
-        //print_r($propertyAccessor->getValue($item, '[1].id'));die();
+
         $a = Array();
-        for ($i=0; $i < count($item) ; $i++) {
+        for ($i = 0; $i < count($item) ; $i++) {
             $b = Array();
-            for ($n=0; $n < 3; $n++) { 
+            for ($n = 0; $n < 3; $n++) { 
                 $n = 0;
                 $b[$n] = $propertyAccessor->getValue($item, "[$i].id");
                 $n++;
-                $b[$n] = $propertyAccessor->getValue($item, "[$i].tittle");
+                $b[$n] = $propertyAccessor->getValue($item, "[$i].name");
                 $n++;
-                $b[$n] = $propertyAccessor->getValue($item, "[$i].author");
+                $b[$n] = $propertyAccessor->getValue($item, "[$i].lastUpdate");
                 $n++; 
             }
 
@@ -50,9 +50,10 @@ class ListFeedCommand extends Command
         }
         
             $table
-                ->setHeaders(array('Id', 'Title', 'Author'))
+                ->setHeaders(array('Id', 'Name', 'Last_update'))
                 ->setRows($a);
 
             $table->render();
     }
 }
+?>

@@ -1,7 +1,33 @@
 {% extends "::base.html.twig" %}
 
 {% block title %}AppBundle:Feed:list{% endblock %}
-
+{% block javascripts %}{% endblock %}
 {% block body %}
-<h1>Welcome to the Feed:list page</h1>
+<h2>Welcome to the Paymentwall test task!<br></h2>
+
+{{ form_start(form) }}
+{{ form_widget(form) }}
+{{ form_end(form) }}
+<br>
+<div>RSS-feed will be here...<br>
+    <p>
+    <a href="{{ channel[1] }}">{{ channel[0] }}</a>
+    <br>
+    {{ channel[2] }}
+    </p>
+</div>
+
+{% for item in items %}
+<div>
+    <p>
+    <a href="{{ item.link }}">{{ item.title }}</a>
+    <br>
+    {{ item.desc|raw }}
+    </p>  
+</div>
+{% endfor %}
+
+
+
 {% endblock %}
+

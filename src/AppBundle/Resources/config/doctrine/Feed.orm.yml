@@ -9,18 +9,12 @@ AppBundle\Entity\Feed:
             generator:
                 strategy: AUTO
     fields:
-        tittle:
-            type: string
-            length: 255
-        createdTime:
-            type: string
-            column: created_time
-        text:
+        url:
             type: text
-        author:
+        name:
             type: string
             length: 255
-        category:
+        lastUpdate:
             type: string
-            length: 255
+            column: last_update
     lifecycleCallbacks: {  }

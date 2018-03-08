@@ -36,3 +36,4 @@ class RemoveFeedCommand extends Command
         $output->writeln('Item with id = '.$id.' was deleted!');
     }
 }
+?>

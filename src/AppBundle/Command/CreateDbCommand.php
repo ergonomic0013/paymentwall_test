@@ -61,3 +61,4 @@ class CreateDbCommand extends Command
     }
 
 }
+?>

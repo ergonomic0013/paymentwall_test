@@ -12,5 +12,7 @@ $application->add(new CreateDbCommand());
 $application->add(new AddFeedCommand());
 $application->add(new ListFeedCommand());
 $application->add(new RemoveFeedCommand());
+$application->add(new CurrentFeedCommand());
 
 $application->run();
+?>
