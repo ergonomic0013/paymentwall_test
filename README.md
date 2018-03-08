@@ -11,7 +11,7 @@ For details on how to download and get started with Symfony, see the
 First you need to clone project. For this enter the command in console:
 
 ```sh
-git clone https://github.com/ergonomic0013/paymentwall_test.git
+git clone https://github.com/ergonomic0013/testwall.git
 ```
 
 After setup DB and create table (enter command in project directory):
@@ -35,7 +35,7 @@ secret: ThisTokenIsNotSoSecretChangeIt
 #### Commands:
 Add new item:
 ```
-php bin/console feed:add --tittle="any value" --text="any value" --author="any value" --category=[comedy || dramma || fantasy]
+php bin/console feed:add --name="Example" --url="http://www.example.com/rss"
 ```
 `*all value are required`
 
@@ -53,10 +53,16 @@ php bin/console feed:remove N
 ```
 `*N = [1, 2, 3 ...... N];`
 
+Current items by `id`:
+```
+php bin/console feed:items N
+```
+`*N = [1, 2, 3 ...... N];`
+
 ## GUI mode:
 --------------
 
-comming soon...
+In GUI mode, everything is intuitively understandable for a normal user
 
 
 
